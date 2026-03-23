@@ -3,147 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Helder Flow - Artista musical. Ouve as minhas músicas, descobre novidades e contacta!">
+    <meta name="description" content="Helder Flow - Artista musical. Ouve as minhas músicas e segue nas redes sociais!">
     <title>Helder Flow</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
+            background: #0f0f0f;
+            color: #fff;
         }
 
         header {
-            background-color: #222;
-            color: #fff;
-            padding: 20px 0;
+            background: #000;
+            padding: 20px;
             text-align: center;
             position: sticky;
             top: 0;
-            z-index: 1000;
         }
 
-        header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        header h1 {
+            font-size: 2.2em;
+            color: #e50914;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
 
         nav a {
             color: #fff;
+            margin: 0 10px;
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: 700;
+            font-weight: bold;
         }
 
-        nav a:hover { text-decoration: underline; }
-
-        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-
-        section {
-            margin-bottom: 40px;
-            background: #fff;
+        .container {
+            max-width: 1000px;
+            margin: auto;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        section h2 { color: #222; margin-bottom: 15px; }
-
-        .cover-photo {
+        .cover {
             width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 8px;
+            border-radius: 10px;
             margin-bottom: 20px;
         }
 
-        .button-primary {
-            display: inline-block;
-            background-color: #e50914;
-            color: #fff;
-            padding: 15px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 1.2em;
-            margin-right: 15px;
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #e50914;
             margin-bottom: 10px;
-            transition: background-color 0.3s;
         }
 
-        .button-primary:hover { background-color: #c40611; }
-
-        .social-icons a {
-            display: inline-block;
-            margin-right: 15px;
+        .btn {
+            display: block;
+            background: #e50914;
+            padding: 15px;
+            margin-top: 10px;
+            text-align: center;
+            border-radius: 30px;
+            color: white;
             text-decoration: none;
-            font-size: 1.5em;
-            color: #222;
+            font-weight: bold;
         }
 
-        .social-icons a:hover { color: #e50914; }
+        .btn:hover {
+            background: #c40611;
+        }
+
+        .social a {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #fff;
+        }
 
         footer {
-            background-color: #222;
-            color: #fff;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-        }
-
-        footer p { font-size: 0.9em; }
-
-        @media (max-width: 768px) {
-            header h1 { font-size: 2em; }
-            nav a { display: block; margin: 10px 0; }
-            .container { padding: 0 10px; }
-            .button-primary { width: 100%; text-align: center; margin-right: 0; }
+            padding: 20px;
+            background: #000;
+            margin-top: 30px;
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <h1>Helder Flow</h1>
-        <nav>
-            <a href="#bio">Biografia</a>
-            <a href="#musicas">Músicas</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
 
-    <div class="container">
-        <!-- Foto de capa -->
-        <img src="capa.jpg" alt="Helder Flow Capa" class="cover-photo">
+<header>
+    <h1>Helder Flow</h1>
+    <nav>
+        <a href="#bio">Bio</a>
+        <a href="#musicas">Música</a>
+        <a href="#redes">Redes</a>
+    </nav>
+</header>
 
-        <section id="bio">
-            <h2>Biografia</h2>
-            <p>Aqui podes escrever uma pequena biografia sobre o Helder Flow, a tua trajetória na música, influências e conquistas.</p>
-        </section>
+<div class="container">
 
-        <section id="musicas">
-            <h2>Músicas</h2>
-            <p>Destaca aqui as tuas músicas ou playlists favoritas.</p>
-            <a href="https://open.spotify.com/" class="button-primary" target="_blank">Ouvir no Spotify</a>
-            <a href="https://www.youtube.com/" class="button-primary" target="_blank">Ouvir no YouTube</a>
-        </section>
+    <!-- IMAGEM -->
+    <img src="capa.jpg" class="cover" alt="Helder Flow">
 
-        <section id="redes">
-            <h2>Redes Sociais</h2>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-                <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-                <a href="https://www.twitter.com/" target="_blank">Twitter</a>
-                <a href="https://www.tiktok.com/" target="_blank">TikTok</a>
-            </div>
-        </section>
+    <!-- BIO -->
+    <section id="bio">
+        <h2>Biografia</h2>
+        <p>
+            Helder Flow, também conhecido como Hélder Cristiano José Zango Marques,
+            é um artista focado em crescimento, música e evolução constante.
+        </p>
+    </section>
 
-        <section id="contato">
-            <h2>Contato</h2>
-            <p>Queres entrar em contato? Envia um email para <a href="mailto:heldercristianojosezangomarque@gmail.com">heldercristianojosezangomarque@gmail.com</a>.</p>
-        </section>
-    </div>
+    <!-- MÚSICA -->
+    <section id="musicas">
+        <h2>Ouvir Música</h2>
 
-    <footer>
-        <p>© 2026 Helder Flow. Todos os direitos reservados.</p>
-    </footer>
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/results?search_query=Hélder+Cristiano+José+Zango+Marques" target="_blank" class="btn">
+            Ouvir no YouTube
+        </a>
+
+        <!-- Audiomack -->
+        <a href="https://audiomack.com/" target="_blank" class="btn">
+            Ouvir no Audiomack
+        </a>
+    </section>
+
+    <!-- REDES -->
+    <section id="redes">
+        <h2>Redes Sociais</h2>
+
+        <div class="social">
+            <a href="https://www.youtube.com/results?search_query=Hélder+Cristiano+José+Zango+Marques" target="_blank">
+                YouTube - Hélder Cristiano José Zango Marques
+            </a>
+
+            <a href="https://www.instagram.com/eldercristianojoseSangolMarques" target="_blank">
+                Instagram - eldercristianojoseSangolMarques
+            </a>
+
+            <a href="https://www.tiktok.com/@helder_zango_marques" target="_blank">
+                TikTok - helder_zango_marques
+            </a>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2026 Helder Flow</p>
+</footer>
+
 </body>
 </html>
