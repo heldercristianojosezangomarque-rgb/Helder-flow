@@ -1,75 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <title>Helder Flow - Oficial</title>
-
-  <style>
-    body {
-      margin: 0;
-      background: linear-gradient(black, #111);
-      color: white;
-      font-family: Arial;
-      text-align: center;
-    }
-
-    header {
-      padding: 40px;
-      background: #000;
-    }
-
-    h1 {
-      color: #00ffcc;
-    }
-
-    .section {
-      padding: 30px;
-    }
-
-    button {
-      padding: 15px;
-      background: #00ffcc;
-      border: none;
-      cursor: pointer;
-    }
-
-    footer {
-      padding: 20px;
-      background: #000;
-      margin-top: 40px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome do Artista</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            color: #333;
+        }
+        .hero {
+            background: url('caminho/para/imagem.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .section {
+            padding: 60px 20px;
+        }
+        .section h2 {
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+        .social-links a {
+            margin: 0 10px;
+            color: white;
+            font-size: 1.5rem;
+        }
+        footer {
+            background: #222;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-  <h1>Helder Flow 🎤</h1>
-  <p>Artista Oficial</p>
-</header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <h1>Nome do Artista</h1>
+            <p>Bem-vindo ao mundo do meu som</p>
+        </div>
+    </section>
 
-<div class="section">
-  <h2>🔥 Nova Música</h2>
-  <button onclick="window.open('https://seulink.com')">
-    Ouvir / Baixar
-  </button>
-</div>
+    <!-- Biografia -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2>Biografia</h2>
+            <p>Aqui vai a biografia do artista. Fala sobre o percurso, inspirações, prêmios e história.</p>
+        </div>
+    </section>
 
-<div class="section">
-  <h2>🎬 Vídeos</h2>
-  <button onclick="window.open('https://tiktok.com')">
-    Ver no TikTok
-  </button>
-</div>
+    <!-- Músicas -->
+    <section class="section">
+        <div class="container">
+            <h2>Músicas</h2>
+            <!-- Spotify Embed -->
+            <div class="mb-4">
+                <iframe src="https://open.spotify.com/embed/track/SEU_TRACK_ID_AQUI" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+            <!-- Mais músicas ou outros embeds -->
+        </div>
+    </section>
 
-<div class="section">
-  <h2>📩 Contacto</h2>
-  <p>Email: teuemail@email.com</p>
-</div>
+    <!-- Agenda de Shows -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2>Agenda de Shows</h2>
+            <p>Fique atento aos próximos shows e turnês do artista.</p>
+            <!-- Tabela ou lista de eventos aqui -->
+        </div>
+    </section>
 
-<footer>
-  <p>© 2026 Helder Flow</p>
-</footer>
+    <!-- Contato -->
+    <section class="section">
+        <div class="container">
+            <h2>Contato</h2>
+            <p>Entre em contato através do formulário ou pelas redes sociais.</p>
+            <!-- Formulário de contato ou info aqui -->
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Nome do Artista. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
