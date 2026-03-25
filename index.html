@@ -1,66 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Helder Flow</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helder Flow</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: black;
-      color: white;
-      text-align: center;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(black, #0a0a0a);
+  color: white;
+  text-align: center;
+}
 
-    header {
-      padding: 20px;
-      font-size: 28px;
-      font-weight: bold;
-    }
+header {
+  font-size: 30px;
+  padding: 20px;
+  font-weight: bold;
+  animation: fade 1.5s ease-in;
+}
 
-    .card {
-      margin: 15px;
-      padding: 15px;
-      background: #111;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(255,0,0,0.3);
-    }
+.card {
+  margin: 15px;
+  padding: 20px;
+  background: #111;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255,0,0,0.3);
+  animation: fade 1s ease-in;
+}
 
-    img {
-      width: 100%;
-      border-radius: 15px;
-    }
+img {
+  width: 100%;
+  border-radius: 15px;
+}
 
-    h2 {
-      margin-top: 20px;
-    }
+.btn {
+  display: block;
+  margin: 15px;
+  padding: 15px;
+  background: red;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-    .btn {
-      display: block;
-      margin: 15px;
-      padding: 15px;
-      background: red;
-      color: white;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.btn:hover {
+  background: darkred;
+  transform: scale(1.05);
+}
 
-    .social a {
-      display: block;
-      margin: 10px;
-      color: white;
-      text-decoration: none;
-    }
+.audio-player {
+  margin-top: 15px;
+}
 
-    footer {
-      margin-top: 30px;
-      padding: 10px;
-      color: gray;
-    }
-  </style>
+audio {
+  width: 100%;
+}
+
+.social a {
+  display: block;
+  margin: 10px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social a:hover {
+  color: red;
+}
+
+footer {
+  margin-top: 30px;
+  color: gray;
+}
+
+@keyframes fade {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1;}
+}
+</style>
+
 </head>
 
 <body>
@@ -68,7 +90,7 @@
 <header>Helder Flow</header>
 
 <div class="card">
-  <img src="capa.jpg" alt="Helder Flow">
+  <img src="capa.jpg">
   <h2>Drill • Trap</h2>
 </div>
 
@@ -76,18 +98,20 @@
   <h2>Biografia</h2>
   <p>
     Helder Flow, também conhecido como Hélder Cristiano José Zango Marques.
-    Artista focado em Drill e Trap, trazendo energia e visão única.
+    Artista de Drill e Trap com visão única e energia forte.
   </p>
 </div>
 
 <div class="card">
   <h2>Música</h2>
 
-  <!-- PLAYER AUDIOMACK -->
-  <iframe 
-    src="https://audiomack.com/embed/artist/song"
-    scrolling="no" width="100%" height="252" frameborder="0">
-  </iframe>
+  <!-- PLAYER REAL -->
+  <div class="audio-player">
+    <audio controls>
+      <source src="musica.mp3" type="audio/mpeg">
+      Teu navegador não suporta áudio.
+    </audio>
+  </div>
 
   <a class="btn" href="https://audiomack.com" target="_blank">
     Ouvir no Audiomack
@@ -96,9 +120,9 @@
 
 <div class="card social">
   <h2>Redes</h2>
-  <a href="https://youtube.com" target="_blank">YouTube</a>
-  <a href="https://instagram.com" target="_blank">Instagram</a>
-  <a href="https://tiktok.com" target="_blank">TikTok</a>
+  <a href="#">YouTube</a>
+  <a href="#">Instagram</a>
+  <a href="#">TikTok</a>
 </div>
 
 <div class="card">
