@@ -63,12 +63,23 @@ iframe {
   width: 100%;
   height: 252px;
   border-radius: 10px;
+  border: none;
 }
 
-/* MUSIC LIST */
-.music-list div {
-  padding: 10px;
-  border-bottom: 1px solid #333;
+/* LINKS */
+.links a {
+  display: block;
+  margin: 10px;
+  padding: 15px;
+  background: #222;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.links a:hover {
+  background: red;
 }
 
 /* BUTTON */
@@ -85,17 +96,6 @@ iframe {
   font-weight: bold;
 }
 
-/* LINKS PAGE */
-.links a {
-  display: block;
-  margin: 10px;
-  padding: 15px;
-  background: #222;
-  border-radius: 30px;
-  color: white;
-  text-decoration: none;
-}
-
 /* FOOTER */
 footer {
   text-align: center;
@@ -110,11 +110,12 @@ footer {
 
 <header>Helder Flow</header>
 
+<!-- CAPA -->
 <div class="hero">
-  <img src="capa.jpg">
-  
+  <img src="capa.jpg" alt="Helder Flow">
+
   <!-- BOTÃO PLAY -->
-  <div class="play-btn" onclick="playMusic()">
+  <div class="play-btn" onclick="mostrarPlayer()">
     ▶️ Ouvir Agora
   </div>
 </div>
@@ -124,36 +125,37 @@ footer {
   <iframe 
     src="https://audiomack.com/embed/heldercristianojosezangomarque/song/sonhos-do-flow">
   </iframe>
-</div>
 
-<!-- LISTA DE MÚSICAS -->
-<div class="section">
-  <h2>🎧 Músicas</h2>
-  <div class="music-list">
-    <div>Sonhos do Flow 🔥</div>
-    <div>Nova música (em breve)</div>
-    <div>Nova música (em breve)</div>
-  </div>
+  <a class="btn" href="https://audiomack.com/heldercristianojosezangomarque/song/sonhos-do-flow" target="_blank">
+    Ouvir no Audiomack
+  </a>
 </div>
 
 <!-- BIO -->
 <div class="section">
   <h2>🎤 Biografia</h2>
   <p>
-    Helder Flow é um artista de Drill & Trap focado em evolução,
-    autenticidade e impacto real na música.
+    Helder Flow (Hélder Cristiano José Zango Marques) é um artista de Drill & Trap,
+    focado em evolução, autenticidade e impacto real na música.
   </p>
 </div>
 
-<!-- LINKS (TIPO LINKTREE) -->
+<!-- LINKS -->
 <div class="section links">
   <h2>🌍 Meus Links</h2>
-  <a href="https://audiomack.com/heldercristianojosezangomarque/song/sonhos-do-flow" target="_blank">
-    🎧 Ouvir no Audiomack
+
+  <a href="https://tiktok.com/@helderzangomarques" target="_blank">
+    🎵 TikTok
   </a>
-  <a href="#">📸 Instagram</a>
-  <a href="#">🎥 YouTube</a>
-  <a href="#">🎵 TikTok</a>
+
+  <a href="https://www.instagram.com/edmilsonmmarquinho" target="_blank">
+    📸 Instagram
+  </a>
+
+  <a href="https://youtube.com/@heldercristianojosezangomarque" target="_blank">
+    🎥 YouTube
+  </a>
+
 </div>
 
 <!-- APOIO -->
@@ -165,10 +167,10 @@ footer {
 <footer>© 2026 Helder Flow</footer>
 
 <script>
-function playMusic() {
+function mostrarPlayer() {
   document.getElementById("player").style.display = "block";
 }
 </script>
 
 </body>
-    </html>
+</html>
