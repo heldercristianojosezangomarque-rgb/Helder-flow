@@ -11,75 +11,96 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(black, #0a0a0a);
   color: white;
-  text-align: center;
 }
 
+/* HEADER */
 header {
-  font-size: 30px;
-  padding: 20px;
+  text-align: center;
+  padding: 30px;
+  font-size: 34px;
   font-weight: bold;
-  animation: fade 1.5s ease-in;
 }
 
-.card {
-  margin: 15px;
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 20px;
+}
+
+.hero img {
+  width: 90%;
+  max-width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255,0,0,0.5);
+}
+
+.play-btn {
+  margin-top: 15px;
+  padding: 15px 25px;
+  background: red;
+  border-radius: 50px;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+  background: darkred;
+}
+
+/* SECTIONS */
+.section {
+  margin: 20px;
   padding: 20px;
   background: #111;
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(255,0,0,0.3);
-  animation: fade 1s ease-in;
+  box-shadow: 0 0 15px rgba(255,0,0,0.2);
 }
 
-img {
+/* PLAYER */
+iframe {
   width: 100%;
-  border-radius: 15px;
+  height: 252px;
+  border-radius: 10px;
 }
 
+/* MUSIC LIST */
+.music-list div {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+}
+
+/* BUTTON */
 .btn {
   display: block;
-  margin: 15px;
+  text-align: center;
+  margin: 15px auto;
   padding: 15px;
+  width: 80%;
   background: red;
   color: white;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s;
 }
 
-.btn:hover {
-  background: darkred;
-  transform: scale(1.05);
-}
-
-.audio-player {
-  margin-top: 15px;
-}
-
-audio {
-  width: 100%;
-}
-
-.social a {
+/* LINKS PAGE */
+.links a {
   display: block;
   margin: 10px;
+  padding: 15px;
+  background: #222;
+  border-radius: 30px;
   color: white;
   text-decoration: none;
-  transition: 0.3s;
 }
 
-.social a:hover {
-  color: red;
-}
-
+/* FOOTER */
 footer {
-  margin-top: 30px;
+  text-align: center;
+  margin: 30px;
   color: gray;
-}
-
-@keyframes fade {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1;}
 }
 </style>
 
@@ -89,48 +110,65 @@ footer {
 
 <header>Helder Flow</header>
 
-<div class="card">
+<div class="hero">
   <img src="capa.jpg">
-  <h2>Drill • Trap</h2>
+  
+  <!-- BOTÃO PLAY -->
+  <div class="play-btn" onclick="playMusic()">
+    ▶️ Ouvir Agora
+  </div>
 </div>
 
-<div class="card">
-  <h2>Biografia</h2>
+<!-- PLAYER ESCONDIDO -->
+<div class="section" id="player" style="display:none;">
+  <iframe 
+    src="https://audiomack.com/embed/heldercristianojosezangomarque/song/sonhos-do-flow">
+  </iframe>
+</div>
+
+<!-- LISTA DE MÚSICAS -->
+<div class="section">
+  <h2>🎧 Músicas</h2>
+  <div class="music-list">
+    <div>Sonhos do Flow 🔥</div>
+    <div>Nova música (em breve)</div>
+    <div>Nova música (em breve)</div>
+  </div>
+</div>
+
+<!-- BIO -->
+<div class="section">
+  <h2>🎤 Biografia</h2>
   <p>
-    Helder Flow, também conhecido como Hélder Cristiano José Zango Marques.
-    Artista de Drill e Trap com visão única e energia forte.
+    Helder Flow é um artista de Drill & Trap focado em evolução,
+    autenticidade e impacto real na música.
   </p>
 </div>
 
-<div class="card">
-  <h2>Música</h2>
-
-  <!-- PLAYER REAL -->
-  <div class="audio-player">
-    <audio controls>
-      <source src="musica.mp3" type="audio/mpeg">
-      Teu navegador não suporta áudio.
-    </audio>
-  </div>
-
-  <a class="btn" href="https://audiomack.com" target="_blank">
-    Ouvir no Audiomack
+<!-- LINKS (TIPO LINKTREE) -->
+<div class="section links">
+  <h2>🌍 Meus Links</h2>
+  <a href="https://audiomack.com/heldercristianojosezangomarque/song/sonhos-do-flow" target="_blank">
+    🎧 Ouvir no Audiomack
   </a>
+  <a href="#">📸 Instagram</a>
+  <a href="#">🎥 YouTube</a>
+  <a href="#">🎵 TikTok</a>
 </div>
 
-<div class="card social">
-  <h2>Redes</h2>
-  <a href="#">YouTube</a>
-  <a href="#">Instagram</a>
-  <a href="#">TikTok</a>
-</div>
-
-<div class="card">
-  <h2>Apoiar</h2>
-  <a class="btn" href="#">Apoiar 💰</a>
+<!-- APOIO -->
+<div class="section">
+  <h2>💰 Apoiar</h2>
+  <a class="btn" href="#">Apoiar o artista</a>
 </div>
 
 <footer>© 2026 Helder Flow</footer>
 
+<script>
+function playMusic() {
+  document.getElementById("player").style.display = "block";
+}
+</script>
+
 </body>
-</html>
+    </html>
