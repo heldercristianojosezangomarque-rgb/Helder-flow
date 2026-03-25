@@ -1,147 +1,112 @@
-
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Helder Flow</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helder Flow</title>
 
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: black;
+      color: white;
+      text-align: center;
+    }
 
-body {
-    font-family: Arial, sans-serif;
-    background:#0f0f0f;
-    color:white;
-}
+    header {
+      padding: 20px;
+      font-size: 28px;
+      font-weight: bold;
+    }
 
-header {
-    background:black;
-    padding:20px;
-    text-align:center;
-}
+    .card {
+      margin: 15px;
+      padding: 15px;
+      background: #111;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(255,0,0,0.3);
+    }
 
-header h1 { color:#e50914; }
+    img {
+      width: 100%;
+      border-radius: 15px;
+    }
 
-.container {
-    max-width:1000px;
-    margin:auto;
-    padding:20px;
-}
+    h2 {
+      margin-top: 20px;
+    }
 
-/* IMAGEM PROFISSIONAL */
-.cover-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 10px;
-}
+    .btn {
+      display: block;
+      margin: 15px;
+      padding: 15px;
+      background: red;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-.cover {
-    width: 100%;
-    display: block;
-    filter: brightness(0.7);
-}
+    .social a {
+      display: block;
+      margin: 10px;
+      color: white;
+      text-decoration: none;
+    }
 
-.overlay {
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-}
-
-.cover-text {
-    position:absolute;
-    bottom:20px;
-    left:20px;
-}
-
-.cover-text h2 { font-size:2em; }
-
-.btn {
-    display:block;
-    background:#e50914;
-    padding:15px;
-    margin-top:10px;
-    text-align:center;
-    border-radius:30px;
-    color:white;
-    text-decoration:none;
-}
-
-section { margin-top:30px; }
-
-.social a {
-    display:block;
-    margin-top:10px;
-    color:white;
-    text-decoration:none;
-}
-
-footer {
-    text-align:center;
-    padding:20px;
-    margin-top:30px;
-    background:black;
-}
-</style>
+    footer {
+      margin-top: 30px;
+      padding: 10px;
+      color: gray;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-<h1>Helder Flow</h1>
-</header>
+<header>Helder Flow</header>
 
-<div class="container">
-
-<!-- IMAGEM -->
-<div class="cover-container">
-    <img src="capa.jpg" class="cover">
-    <div class="overlay"></div>
-    <div class="cover-text">
-        <h2>Helder Flow</h2>
-        <p>Drill • Trap</p>
-    </div>
+<div class="card">
+  <img src="capa.jpg" alt="Helder Flow">
+  <h2>Drill • Trap</h2>
 </div>
 
-<section>
-<h2>Biografia</h2>
-<p>Helder Flow, também conhecido como Hélder Cristiano José Zango Marques, é um artista em crescimento focado na música.</p>
-</section>
-
-<section>
-<h2>Música</h2>
-
-<iframe width="100%" height="200"
-src="https://www.youtube.com/embed?listType=search&list=Hélder+Cristiano+José+Zango+Marques"
-frameborder="0" allowfullscreen></iframe>
-
-<a href="https://audiomack.com/" target="_blank" class="btn">Audiomack</a>
-</section>
-
-<section>
-<h2>Redes</h2>
-<div class="social">
-<a href="https://www.youtube.com/results?search_query=Hélder+Cristiano+José+Zango+Marques" target="_blank">YouTube</a>
-<a href="https://www.instagram.com/eldercristianojoseSangolMarques" target="_blank">Instagram</a>
-<a href="https://www.tiktok.com/@helderzangomarques" target="_blank">TikTok</a>
-</div>
-</section>
-
-<section>
-<h2>Apoiar</h2>
-<a href="#" class="btn">Apoiar 💰</a>
-</section>
-
+<div class="card">
+  <h2>Biografia</h2>
+  <p>
+    Helder Flow, também conhecido como Hélder Cristiano José Zango Marques.
+    Artista focado em Drill e Trap, trazendo energia e visão única.
+  </p>
 </div>
 
-<footer>
-© 2026 Helder Flow
-</footer>
+<div class="card">
+  <h2>Música</h2>
+
+  <!-- PLAYER AUDIOMACK -->
+  <iframe 
+    src="https://audiomack.com/embed/artist/song"
+    scrolling="no" width="100%" height="252" frameborder="0">
+  </iframe>
+
+  <a class="btn" href="https://audiomack.com" target="_blank">
+    Ouvir no Audiomack
+  </a>
+</div>
+
+<div class="card social">
+  <h2>Redes</h2>
+  <a href="https://youtube.com" target="_blank">YouTube</a>
+  <a href="https://instagram.com" target="_blank">Instagram</a>
+  <a href="https://tiktok.com" target="_blank">TikTok</a>
+</div>
+
+<div class="card">
+  <h2>Apoiar</h2>
+  <a class="btn" href="#">Apoiar 💰</a>
+</div>
+
+<footer>© 2026 Helder Flow</footer>
 
 </body>
 </html>
