@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -9,19 +11,19 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     background:#0f0f0f;
     color:white;
 }
 
-/* HEADER */
 header {
     background:black;
     padding:20px;
     text-align:center;
 }
 
-/* CONTAINER */
+header h1 { color:#e50914; }
+
 .container {
     max-width:1000px;
     margin:auto;
@@ -40,33 +42,25 @@ header {
     width: 100%;
     display: block;
     filter: brightness(0.7);
-    transition: transform 0.5s ease;
-}
-
-.cover-container:hover .cover {
-    transform: scale(1.05);
 }
 
 .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
     background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
 }
 
 .cover-text {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
+    position:absolute;
+    bottom:20px;
+    left:20px;
 }
 
-.cover-text h2 {
-    font-size: 2em;
-}
+.cover-text h2 { font-size:2em; }
 
-/* BOTÕES */
 .btn {
     display:block;
     background:#e50914;
@@ -78,12 +72,8 @@ header {
     text-decoration:none;
 }
 
-/* SEÇÕES */
-section {
-    margin-top:30px;
-}
+section { margin-top:30px; }
 
-/* REDES */
 .social a {
     display:block;
     margin-top:10px;
@@ -91,12 +81,6 @@ section {
     text-decoration:none;
 }
 
-/* INPUT */
-.upload {
-    margin-top:10px;
-}
-
-/* FOOTER */
 footer {
     text-align:center;
     padding:20px;
@@ -116,7 +100,7 @@ footer {
 
 <!-- IMAGEM -->
 <div class="cover-container">
-    <img src="capa.jpg" id="preview" class="cover">
+    <img src="capa.jpg" class="cover">
     <div class="overlay"></div>
     <div class="cover-text">
         <h2>Helder Flow</h2>
@@ -124,37 +108,28 @@ footer {
     </div>
 </div>
 
-<!-- TROCAR IMAGEM (CORRIGIDO) -->
-<input type="file" class="upload" accept="image/*" id="fileInput">
-
 <section>
 <h2>Biografia</h2>
-<p>Helder Flow, também conhecido como Hélder Cristiano José Zango Marques.</p>
+<p>Helder Flow, também conhecido como Hélder Cristiano José Zango Marques, é um artista em crescimento focado na música.</p>
 </section>
 
 <section>
 <h2>Música</h2>
 
-<!-- PLAYER -->
 <iframe width="100%" height="200"
 src="https://www.youtube.com/embed?listType=search&list=Hélder+Cristiano+José+Zango+Marques"
 frameborder="0" allowfullscreen></iframe>
 
 <a href="https://audiomack.com/" target="_blank" class="btn">Audiomack</a>
-
 </section>
 
 <section>
 <h2>Redes</h2>
-
 <div class="social">
 <a href="https://www.youtube.com/results?search_query=Hélder+Cristiano+José+Zango+Marques" target="_blank">YouTube</a>
-
 <a href="https://www.instagram.com/eldercristianojoseSangolMarques" target="_blank">Instagram</a>
-
 <a href="https://www.tiktok.com/@helderzangomarques" target="_blank">TikTok</a>
 </div>
-
 </section>
 
 <section>
@@ -167,32 +142,6 @@ frameborder="0" allowfullscreen></iframe>
 <footer>
 © 2026 Helder Flow
 </footer>
-
-<script>
-// 🔥 CORREÇÃO REAL DO BUG
-const input = document.getElementById("fileInput");
-const preview = document.getElementById("preview");
-
-input.addEventListener("change", function(){
-    const file = this.files[0];
-    if(file){
-        const reader = new FileReader();
-        reader.onload = function(e){
-            preview.src = e.target.result;
-
-            // salva no navegador (NÃO perde ao atualizar)
-            localStorage.setItem("imagem", e.target.result);
-        }
-        reader.readAsDataURL(file);
-    }
-});
-
-// carregar imagem salva
-const savedImage = localStorage.getItem("imagem");
-if(savedImage){
-    preview.src = savedImage;
-}
-</script>
 
 </body>
 </html>
