@@ -3,181 +3,166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hélder Flow</title>
-
+<title>Hélder Flow - Ultra Pro</title>
 <style>
+/* BODY / BACKGROUND ANIMADO */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0d0d0d;
+  font-family: 'Arial', sans-serif;
   color: white;
+  overflow-x: hidden;
+  position: relative;
+  height: 100%;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top:0; left:0; width:100%; height:100%;
+  background: url('https://i.imgur.com/EXEMPLO.jpg') no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(5px) brightness(0.5);
+  z-index: -2;
+  animation: moveBg 60s linear infinite;
+}
+@keyframes moveBg {
+  0% { transform: scale(1) translate(0,0); }
+  50% { transform: scale(1.05) translate(-20px, -20px); }
+  100% { transform: scale(1) translate(0,0); }
 }
 
 /* HEADER */
-.header {
+header {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow: 0 0 20px black;
+}
+
+/* HERO */
+.hero {
   text-align: center;
   padding: 20px;
 }
+.hero img {
+  width: 90%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255,0,0,0.7);
+  transition: transform 0.3s;
+}
+.hero img:hover { transform: scale(1.05); }
+.hero h2 { margin-top: 15px; color: #ff0066; text-shadow: 0 0 10px black; }
 
-.header img {
-  width: 120px;
-  border-radius: 50%;
+/* SECTION */
+.section {
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 20px;
+  max-width: 520px;
+  box-shadow: 0 0 25px black;
 }
 
-.header h1 {
-  margin: 10px 0;
-}
+/* PLAYER AVANÇADO */
+.player { display: flex; flex-direction: column; align-items: center; }
+.playlist { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+.track { display: flex; align-items: center; gap: 10px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 15px; cursor: pointer; transition: 0.3s; }
+.track img { width: 50px; height: 50px; border-radius: 10px; }
+.track:hover { background: rgba(255,255,255,0.2); transform: scale(1.02); }
+.track.active { background: #ff0066; }
 
-/* PLAYER FIXO */
-.player-bar {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: #111;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.player-bar button {
-  background: #ff004f;
+.player-controls { display: flex; justify-content: space-between; width: 100%; margin-top: 15px; gap:10px; flex-wrap: wrap; }
+.player-controls button, .player-controls input[type=range] {
+  background: #ff0066;
+  color: white;
   border: none;
+  border-radius: 15px;
   padding: 10px;
-  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.player-controls button:hover { background: #ff3399; transform: scale(1.05); }
+.player-controls input[type=range] { flex:1; cursor:pointer; }
+
+.progress-container { width: 100%; background: rgba(255,255,255,0.3); height: 10px; border-radius: 10px; margin-top: 10px; cursor: pointer; }
+.progress-filled { width: 0%; height: 100%; background: #ff0066; border-radius: 10px; transition: width 0.1s linear; }
+.time-display { width: 100%; display: flex; justify-content: space-between; font-size: 0.9em; margin-top: 5px; }
+
+/* BOTÕES GERAIS */
+.btn {
+  display: block;
+  text-align: center;
+  margin: 15px auto;
+  padding: 12px;
+  width: 80%;
+  background: #ff0066;
   color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
 }
+.btn:hover { background: #ff3399; transform: scale(1.05); }
 
-/* LISTA */
-.music-list {
-  padding: 20px;
-}
-
-.music {
+/* REDES SOCIAIS */
+.socials { display: flex; justify-content: center; gap: 15px; margin-top: 15px; flex-wrap: wrap; }
+.socials a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 20px;
+  transition: 0.3s;
   display: flex;
   align-items: center;
-  background: #1a1a1a;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
+  justify-content: center;
+}
+.socials a.tiktok { background: #69C9D0; color: black; }
+.socials a.youtube { background: #FF0000; color: white; }
+.socials a.instagram { background: #C13584; color: white; }
+.socials a.share { background: #ff0066; color: white; }
+.socials a:hover { transform: scale(1.1); opacity: 0.9; }
+
+/* QR / APOIO */
+.qr-container { display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 15px; }
+.qr-box { text-align: center; margin: 10px; }
+.qr-box img { width: 150px; height: 150px; border-radius: 15px; box-shadow: 0 0 15px black; }
+.qr-box p { margin-top: 5px; font-weight: bold; }
+
+/* FOOTER */
+footer { text-align: center; margin: 30px; color: gray; }
+
+/* NOTIFICAÇÃO */
+#notification {
+  position: fixed; top: 20px; right: 20px;
+  background: #ff0066; color: white; padding: 15px 25px;
+  border-radius: 20px; box-shadow: 0 0 15px black;
+  display: none; z-index: 1000; font-weight: bold;
 }
 
-.music img {
-  width: 50px;
-  border-radius: 10px;
-  margin-right: 10px;
-}
-
-/* PROGRESS */
-.progress {
-  width: 100%;
-}
-
-/* BOTÕES */
-.links a {
-  display: block;
-  margin: 10px;
-  padding: 15px;
-  text-align: center;
-  background: linear-gradient(45deg,#ff004f,#ff7a00);
-  border-radius: 30px;
-  color: white;
-  text-decoration: none;
-}
-
-/* APOIO */
-.support {
-  padding: 20px;
+/* RESPONSIVO */
+@media (max-width: 500px){
+  header { font-size: 2em; }
+  .btn { font-size: 1em; padding: 10px; }
+  .qr-box img { width: 120px; height: 120px; }
+  .player-controls button { padding: 8px 12px; font-size: 0.9em; }
+  .player-controls input[type=range] { padding:0; }
+  .socials { flex-direction: column; gap: 10px; }
 }
 </style>
 </head>
-
 <body>
 
-<div class="header">
-  <img src="capa.jpg">
-  <h1>Hélder Flow</h1>
+<header>Hélder Flow</header>
+
+<div class="hero">
+  <img src="capa.jpg" alt="Hélder Flow">
+  <h2>Drill • Trap Artist</h2>
 </div>
 
-<!-- MÚSICAS -->
-<div class="music-list">
-
-<div class="music" onclick="playMusic('musica.mp3','Flow Infinito')">
-  <img src="capa.jpg">
-  <span>Flow Infinito</span>
-</div>
-
-<div class="music" onclick="playMusic('musica2.mp3','Trap Night')">
-  <img src="capa.jpg">
-  <span>Trap Night</span>
-</div>
-
-</div>
-
-<!-- REDES -->
-<div class="links">
-  <a href="#">TikTok</a>
-  <a href="#">YouTube</a>
-  <a href="#">Instagram</a>
-</div>
-
-<!-- APOIO -->
-<div class="support">
-  <h2>💰 Apoiar</h2>
-  <img src="paypal.png" width="120">
-  <img src="pix.png" width="120">
-</div>
-
-<!-- PLAYER -->
-<div class="player-bar">
-  <span id="title">Nenhuma música</span>
-
-  <div>
-    <button onclick="prev()">⏮️</button>
-    <button onclick="play()">▶️</button>
-    <button onclick="pause()">⏸️</button>
-    <button onclick="next()">⏭️</button>
-  </div>
-</div>
-
-<audio id="audio"></audio>
-
-<script>
-let audio = document.getElementById("audio");
-let title = document.getElementById("title");
-
-let playlist = [
-  {src:"musica.mp3", name:"Flow Infinito"},
-  {src:"musica2.mp3", name:"Trap Night"}
-];
-
-let current = 0;
-
-function playMusic(src,name){
-  audio.src = src;
-  title.innerText = name;
-  audio.play();
-}
-
-function play(){
-  audio.play();
-}
-
-function pause(){
-  audio.pause();
-}
-
-function next(){
-  current = (current + 1) % playlist.length;
-  playMusic(playlist[current].src, playlist[current].name);
-}
-
-function prev(){
-  current = (current - 1 + playlist.length) % playlist.length;
-  playMusic(playlist[current].src, playlist[current].name);
-}
-</script>
-
-</body>
-</html>
+<div class="section">
+  <h2>🔥 Player Avançado</h2>
+  <div class="player">
+    <audio id="audio"></audio>
+    <div class="playlist" id="playl
